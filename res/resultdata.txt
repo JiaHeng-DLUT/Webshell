@@ -1,0 +1,31 @@
+c: 9.000000  g: 0.040000
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99      6181
+         1.0       0.96      0.92      0.94       636
+
+   micro avg       0.99      0.99      0.99      6817
+   macro avg       0.97      0.96      0.97      6817
+weighted avg       0.99      0.99      0.99      6817
+A:      0.988705c: 9.000000  g: 0.045000
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99      6181
+         1.0       0.97      0.92      0.94       636
+
+   micro avg       0.99      0.99      0.99      6817
+   macro avg       0.98      0.96      0.97      6817
+weighted avg       0.99      0.99      0.99      6817
+A:      0.989291c: 9.000000  g: 0.050000
+The best parameters are as follows:
+C:      9.000000
+gamma:  0.045000
+              precision    recall  f1-score   support
+
+         0.0       0.99      1.00      0.99      6207
+         1.0       0.97      0.89      0.93       610
+
+   micro avg       0.99      0.99      0.99      6817
+   macro avg       0.98      0.94      0.96      6817
+weighted avg       0.99      0.99      0.99      6817
+A:      0.988265

@@ -16,11 +16,13 @@ import re
 projectPath = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 keyWordsWebshell = pd.read_csv(projectPath + "/res/keyWordsWebshell.csv")
 keyWordsNonwebshell = pd.read_csv(projectPath + "/res/keyWordsNonwebshell.csv")
-d = 10
-keyWords = ["filename"]
-keyWords.extend([keyWordsWebshell.iloc[i, 0] for i in range(0, d)])
-keyWords.extend([keyWordsNonwebshell.iloc[i, 0] for i in range(0, d)])
-
+d = 200
+# keyWords = ["filename"]
+keyWords1 = set(keyWordsWebshell.iloc[0:d, 0])
+keyWords2 = set(keyWordsNonwebshell.iloc[0:d, 0])
+keyWords = list(keyWords1.union(keyWords2).difference(keyWords1.intersection(keyWords2)))
+with open(projectPath + "/res/keyWordsUsed.csv", "w") as f:
+    pd.DataFrame(keyWords).to_csv(f, header=False, index=False)
 
 def extractTextFeature(sample, webshell):
     # Extract TEXT FEATURE from sample
@@ -77,7 +79,7 @@ def extractKeyWordsFeature(sample):
         words = [word.lower() for word in words]
         for _ in keyWords:
             f[_] = words.count(_)
-    f["fileName"] = sample
+    f["filename"] = sample
     # print(f)
     return f
 
@@ -86,7 +88,7 @@ def extractFeature():
     # init
     startTime = time.time()
     textFeature = pd.DataFrame(
-        columns=["fileName", "commentCharNum", "wordsNum", "diffWordsNum", "longestWordLen", "totalCharNum",
+        columns=["filename", "commentCharNum", "wordsNum", "diffWordsNum", "longestWordLen", "totalCharNum",
                  "totalSpecialCharNum", "webshell"])
     keyWordsFeature = pd.DataFrame(columns=keyWords)
     webshellPath = projectPath + "/res/samples/" + "webshell/"

@@ -1,0 +1,5 @@
+filename,LanguageIC,Entropy,LongestWord,SignatureNasty,SignatureSuperNasty
+/Users/jiaheng/Desktop/webshell/samples2detect/nonwebshell1.php,0.13070152093520235,4.024876013489434,75,0,0
+/Users/jiaheng/Desktop/webshell/samples2detect/nonwebshell2.php,0.04900674369985284,6.172883635866743,48,0,0
+/Users/jiaheng/Desktop/webshell/samples2detect/webshell1.php,0.03571706851286239,5.4936853005347785,422,83,0
+/Users/jiaheng/Desktop/webshell/samples2detect/webshell2.php,0.030880382051440176,5.715670272619419,422,87,0

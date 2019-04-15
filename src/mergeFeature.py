@@ -18,7 +18,7 @@ def main():
     textFeature = pd.read_csv(projectPath+'/res/textFeature.csv')
     keyWordsFeature = pd.read_csv(projectPath+'/res/keyWordsFeature.csv')
     
-    feature = neopiFeature.merge(keyWordsFeature, on='filename')
+    feature = neopiFeature.iloc[:,:-2].merge(keyWordsFeature, on='filename')
     feature = feature.merge(textFeature, on='filename')
     feature.iloc[:, 1:].to_csv(projectPath+'/res/feature.csv',index=None)
     
